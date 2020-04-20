@@ -1,0 +1,26 @@
+<h3><%= @post.title %></h3>
+<br>
+<p><%= @post.content %></p>
+<br>
+<form align="left" name="edit_post" method="get" action="/posts/<%= @post.id %>/edit">
+    <label class="button">
+        <input name="edit_post" type="submit" id="edit_post" value="Edit This Post">
+    </label>
+</form>
+<br>
+<form align="left" method="POST" action="/posts/<%= @post.id %>/delete">
+     <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete This Post">
+</form>
+<br>
+<form align="top" name="posts_index" method="get" action="/posts">
+  <label class="button">
+    <input name="posts_index" type="submit" id="posts_index" value="See Your Posts">
+  </label>
+</form>
+<br>
+<form align="left" name="logout_form" method="get" action="/logout">
+  <label class="button">
+    <input name="logout" type="submit" id="submit" value="Log Out">
+  </label>
+</form>

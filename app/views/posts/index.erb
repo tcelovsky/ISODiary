@@ -9,12 +9,19 @@
       <% Post.all do |e| %>
       <h4><%= e.title  %></h4>
       <p><%= e.content %></p>
+      <form align="left" name="view_post" method="get" action="/posts/<%= e.id %>">
+        <label class="button">
+          <input name="view_post" type="submit" id="view_post" value="View This Post">
+      </label>
+      </form>
+      <br>
       <form align="left" name="edit_post" method="get" action="/posts/<%= e.id %>/edit">
         <label class="button">
           <input name="edit_post" type="submit" id="edit_post" value="Edit This Post">
       </label>
       </form>
-      <form method="POST" action="/posts/<%= e.id %>/delete">
+      <br>
+      <form align="left" method="POST" action="/posts/<%= e.id %>/delete">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete This Post">
       </form>
