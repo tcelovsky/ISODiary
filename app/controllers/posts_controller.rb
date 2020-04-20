@@ -34,11 +34,19 @@ class PostsController < ApplicationController
     end
 
     delete '/posts/:id/delete'do
-    if logged_in?
-        @post = Post.find_by(params[:id])
-        @post.delete
-        erb :'/posts/index'
-      else redirect to :'/login'
-      end
+        if logged_in?
+            @post = Post.find_by(params[:id])
+            @post.delete
+            erb :'/posts/index'
+        else redirect to :'/login'
+        end
+    end
+
+    get '/posts/:id/edit' do
+        if logged_in?
+            @post = Post.find_by_id(params[:id])
+            erb :'/posts/edit'
+        else redirect to :'/login'
+        end
     end
 end
