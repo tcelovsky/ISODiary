@@ -1,0 +1,24 @@
+<h3>Edit Post: <%= @post.title %></h3>
+<div class = "posts">
+  <form action="/posts/<%= @post.id %>/edit" method="post">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+    <label>Update Title: </label><input type="text" name="title"><br>
+    <br>
+    <label>Content: </label><textarea name="content" rows="20" cols="50"></textarea><br>
+    <br>
+    <input type="submit" value="Edit Post">
+  </form>
+  <br>
+</div>
+
+<form align="top" name="posts_index" method="get" action="/posts">
+  <label class="button">
+    <input name="posts_index" type="submit" id="posts_index" value="Your Posts">
+  </label>
+</form>
+<br>
+<form align="left" name="logout_form" method="get" action="/logout">
+  <label class="button">
+    <input name="logout" type="submit" id="submit" value="Log Out">
+  </label>
+</form>
