@@ -24,4 +24,21 @@ class PostsController < ApplicationController
           else redirect to :'/posts/new'
           end
     end
+
+    get '/posts/:id' do
+        if logged_in?
+            @post = Post.find_by_id(params[:id])
+            erb :'/posts/new'
+          else redirect to :'/login'
+          end
+    end
+
+    delete '/posts/:id/delete'do
+    if logged_in?
+        @post = Post.find_by(params[:id])
+        @post.delete
+        erb :'/posts/index'
+      else redirect to :'/login'
+      end
+    end
 end
