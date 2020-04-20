@@ -8,11 +8,6 @@ class ApplicationController < Sinatra::Base
         erb :home
     end
 
-    get '/logout' do
-        session.clear
-        redirect to '/'
-    end
-
     helpers do
         def current_user
             # find the current user by user id in the session hash
