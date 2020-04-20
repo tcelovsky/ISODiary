@@ -13,4 +13,8 @@ class PostsController < ApplicationController
         else redirect to :'/login'
         end
     end
+
+    post '/posts/new' do
+        
+    end
 end
