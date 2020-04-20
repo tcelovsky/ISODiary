@@ -1,0 +1,29 @@
+<form align="top" name="new_post" method="get" action="/posts/new">
+  <label class="button">
+    <input name="new_post" type="submit" id="new_post" value="Create New Post">
+  </label>
+</form>
+
+<h3>Your Posts:</h3>
+  <div class = "posts">
+      <% Post.all do |e| %>
+      <h4><%= e.title  %></h4>
+      <p><%= e.content %></p>
+      <form align="left" name="edit_post" method="get" action="/posts/<%= e.id %>/edit">
+        <label class="button">
+          <input name="edit_post" type="submit" id="edit_post" value="Edit This Post">
+      </label>
+      </form>
+      <form method="POST" action="/posts/<%= e.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete This Post">
+      </form>
+      <br>
+      <% end %>
+  </div>
+
+<form align="left" name="logout_form" method="get" action="/logout">
+  <label class="button">
+    <input name="logout" type="submit" id="submit" value="Log Out">
+  </label>
+</form>
