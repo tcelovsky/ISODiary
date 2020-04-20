@@ -15,6 +15,13 @@ class PostsController < ApplicationController
     end
 
     post '/posts/new' do
-        
+        if params[:title].present? && params[:content].present?
+            @user = current_user
+            @post = Post.create(title: params[:title], content: params[:content])
+            @post.user_id = @user.id
+            @post.save
+            erb :'/posts'
+          else redirect to :'/posts/new'
+          end
     end
 end
