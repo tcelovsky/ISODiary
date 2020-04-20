@@ -10,8 +10,8 @@ class ApplicationController < Sinatra::Base
 
     helpers do
         def current_user
-            # find the current user by email in the session hash
-            @current_user ||= User.find_by(email: session[:email]) if session[:email]
+            # find the current user by user id in the session hash
+            @current_user ||= User.find_by(id: session[:id]) if session[:id]
           end
       
           def logged_in?
