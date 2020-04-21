@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             session[:id] = @user.id
         else redirect to :'/register'
         end
-        erb :'/posts/index'
+        erb :'/users/login'
     end
 
     get '/login' do
