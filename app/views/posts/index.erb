@@ -6,22 +6,22 @@
 
 <h3>Your Posts:</h3>
   <div class = "posts">
-      <% Post.all do |e| %>
-      <h4><%= e.title  %></h4>
-      <p><%= e.content %></p>
-      <form align="left" name="view_post" method="get" action="/posts/<%= e.id %>">
+      <% @current_user.posts.each do |i| %>
+      <h4><%= i.title  %></h4>
+      <p><%= i.content %></p>
+      <form align="left" name="view_post" method="get" action="/posts/<%= i.id %>">
         <label class="button">
           <input name="view_post" type="submit" id="view_post" value="View This Post">
       </label>
       </form>
       <br>
-      <form align="left" name="edit_post" method="get" action="/posts/<%= e.id %>/edit">
+      <form align="left" name="edit_post" method="get" action="/posts/<%= i.id %>/edit">
         <label class="button">
           <input name="edit_post" type="submit" id="edit_post" value="Edit This Post">
       </label>
       </form>
       <br>
-      <form align="left" method="POST" action="/posts/<%= e.id %>/delete">
+      <form align="left" method="POST" action="/posts/<%= i.id %>/delete">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete This Post">
       </form>

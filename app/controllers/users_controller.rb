@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       @user = User.find_by(email: params[:email])
       if @user && @user.authenticate(params[:password])
         session[:id] = @user.id
+        redirect to :'/posts'
       else redirect to :'/login'
       end
     end

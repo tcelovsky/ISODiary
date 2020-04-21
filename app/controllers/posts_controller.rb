@@ -20,7 +20,7 @@ class PostsController < ApplicationController
             @post = Post.create(title: params[:title], content: params[:content])
             @post.user_id = @user.id
             @post.save
-            erb :'/posts'
+            erb :'/posts/show'
           else redirect to :'/posts/new'
           end
     end
