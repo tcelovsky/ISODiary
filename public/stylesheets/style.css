@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
   }
-  h2, h3 {
+h2, h3 {
     text-align: left;
   }
-  form {
+form {
     text-align: left;
   }
-  .posts {
-      text-align: left;
+.posts {
+    text-align: left;
   }
