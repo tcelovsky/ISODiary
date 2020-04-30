@@ -1,13 +1,17 @@
+.home {
+  text-align: center;
+}
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-h2, h3 {
-    text-align: left;
-  }
-form {
-    text-align: left;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 .posts {
-    text-align: left;
-  }
+  text-align: left;
+}
+
+h2, h3, p {
+  text-align: left;
+}
+form {
+  text-align: left;
+}

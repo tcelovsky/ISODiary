@@ -1,6 +1,8 @@
 <h3>Edit Post: <%= @post.title %></h3>
+<p><%= @post.content %></p>
+<%# content and title should already have a value, so we can change those values - DONE %> 
 <div class = "posts">
-  <form action="/posts/<%= @post.id %>/edit" method="post">
+  <form action="/posts/<%= @post.id %>" method="post">
       <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Update Title: </label><input type="text" name="title"><br>
     <br>
@@ -11,14 +13,8 @@
   <br>
 </div>
 
-<form align="top" name="posts_index" method="get" action="/posts">
-  <label class="button">
-    <input name="posts_index" type="submit" id="posts_index" value="Your Posts">
-  </label>
-</form>
+<a href="/posts">
+	<button>See Your Posts</button>
 <br>
-<form align="left" name="logout_form" method="get" action="/logout">
-  <label class="button">
-    <input name="logout" type="submit" id="submit" value="Log Out">
-  </label>
-</form>
+<a href="/logout">
+	<button>Logout</button>

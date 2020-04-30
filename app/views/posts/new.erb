@@ -1,7 +1,7 @@
 <h3>New Post:</h3>
 
 <div class = "posts">
-  <form action="/posts/new" method="POST">
+  <form action="/posts" method="POST">
     <label>Title: </label><input type="text" name="title"><br>
     <br>
     <label>Post: </label><textarea name="content" rows="20" cols="50"></textarea><br>
@@ -11,14 +11,8 @@
   <br>
 </div>
 
-<form align="top" name="posts_index" method="get" action="/posts">
-  <label class="button">
-    <input name="posts_index" type="submit" id="posts_index" value="See Your Posts">
-  </label>
-</form>
+<a href="/posts">
+	<button>See Your Posts</button>
 <br>
-<form align="left" name="logout_form" method="get" action="/logout">
-  <label class="button">
-    <input name="logout" type="submit" id="submit" value="Log Out">
-  </label>
-</form>
+<a href="/logout">
+	<button>Logout</button>
